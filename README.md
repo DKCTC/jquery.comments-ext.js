@@ -1,6 +1,13 @@
 # jquery.comments.js
 jQuery plugin for returning all comment or text nodes within a jQuery collection in a new jQuery collection
 
+Requires **jQuery** - tested on version 3.3.1
+
+**Adapted from [this](https://www.bennadel.com/blog/1563-jquery-comments-plug-in-to-access-html-comments-for-dom-templating.htm) blog post by Ben Nadel**
+
+This version adds the ability to return text nodes, comment or text nodes whose values match a regex or are filtered by content, and the parent nodes of the matched comment.
+
+
 ## Usage
 
 **Return all comments in the target element:**
