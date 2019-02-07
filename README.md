@@ -1,11 +1,11 @@
-# jquery.comments.js
-jQuery plugin for returning all comment or text nodes within a jQuery collection in a new jQuery collection
+# jquery.comments-ext.js
+jQuery plugin for returning all comment or text nodes within a jQuery collection in a new jQuery collection, includes regex value filtering
 
 Requires **jQuery** - tested on version 3.3.1
 
 **Adapted from [this](https://www.bennadel.com/blog/1563-jquery-comments-plug-in-to-access-html-comments-for-dom-templating.htm) blog post by Ben Nadel**
 
-This version adds the ability to return text nodes, comment or text nodes whose values match a regex or are filtered by content, and the parent nodes of the matched comment.
+This version adds the ability to return text nodes, comment or text nodes whose values match a regex or are filtered by content, or the parent nodes of the matched comment or text nodes.
 
 
 ## Usage
@@ -30,13 +30,13 @@ var _comments = $('.target-element').comments({
 		//-find all of the elements between this comment and the next item class
 		//-filter out anything that isn't the target element
 		//-use the remaining element as the node
-		_hasElement = $(original).nextUntil('.item1-class').filter('.other-class');
+		var _hasElement = $(original).nextUntil('.item1-class').filter('.other-class');
 		if(!!_hasElement.length){
 			node = _hasElement[0];
 		}//if
     
 		//SAMPLE:
-		//if this is not #item2-id, add .new-class and store the info in the data obj after modifying it
+		//remove #item2-id,.item2-class elements from node, add new-class to what's left, store the given value in the data obj
 		$(node).not('#item2-id,.item2-class').addClass('new-class').data('stored-info',original.nodeValue.replace(/(\D*)(\d{4,6})(?!-[a-z])(.*)/g,'$2'));
 		
 		//return the node to add to the collection, else return non-true to omit it
