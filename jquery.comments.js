@@ -28,16 +28,18 @@ jQuery.fn.comments = function(obj,callback){
 		//value returned by the callback
 		callbackNode = false;
 
-		switch(true){
-			//if it's a string or a number, create the regex
-			case(typeof(opt.regex) == 'string' || typeof(opt.regex) == 'number'):
-				rMatch = new RegExp(opt.regex+'' || '');
-			break;
-			//if it's already a regex, use it
-			case(typeof(opt.regex) == 'object' && typeof(opt.regex.exec) == 'function'):
-				rMatch = opt.regex;
-			break;
-		}//switch
+	//create the regex based upon the value supplied
+	//-anything other than a regex, string, or number is ignored
+	switch(true){
+		//if it's a string or a number, create the regex
+		case(typeof(opt.regex) == 'string' || typeof(opt.regex) == 'number'):
+			rMatch = new RegExp(opt.regex+'' || '');
+		break;
+		//if it's already a regex, use it
+		case(typeof(opt.regex) == 'object' && typeof(opt.regex.exec) == 'function'):
+			rMatch = opt.regex;
+		break;
+	}//switch
 
 	// Loop over each node to search its children for comment nodes and element nodes (if deep search)
 	// also filter by regex if it's included
@@ -50,7 +52,7 @@ jQuery.fn.comments = function(obj,callback){
 				// Check to see if this node is a comment or a text node
 				switch(true){
 					case(objChildNode.nodeType === 8 || (objChildNode.nodeType === 3 && !!opt.text)):
-						// this is a comment node
+						// this is a comment node, or it is a text node and a text node was requested
 						// if parent is requested, set addNode to the parent element, else use the comment element itself
 						addNode = (!!opt.parent && objChildNode.parentElement) || objChildNode;
 					
