@@ -2,7 +2,7 @@
 // the current jQuery collection, returning all the
 // comments in a new jQuery collection.
 //
-// https://github.com/dkline03/jquery.comments.js
+// https://github.com/dkline03/jquery.comments-ext.js
 //
 // adapted from:
 // https://www.bennadel.com/blog/1563-jquery-comments-plug-in-to-access-html-comments-for-dom-templating.htm
