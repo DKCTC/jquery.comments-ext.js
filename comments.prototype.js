@@ -3,7 +3,7 @@
 //-we really should not extend the DOM, but in this case, I did it anyway
 //http://perfectionkills.com/whats-wrong-with-extending-the-dom/
 
-//https://github.com/dkline03/jquery.comments.js
+//https://github.com/DKCTC/jquery.comments-ext.js
 
 Node.prototype.closestComment = function(notThis){
 	switch(true){
