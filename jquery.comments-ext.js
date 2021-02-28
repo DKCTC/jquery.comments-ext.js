@@ -1,8 +1,8 @@
-﻿// This jQuery plugin will gather the comments within
+// This jQuery plugin will gather the comments within
 // the current jQuery collection, returning all the
 // comments in a new jQuery collection.
 //
-// https://github.com/dkline03/jquery.comments-ext.js
+// https://github.com/DKCTC/jquery.comments-ext.js
 //
 // adapted from:
 // https://www.bennadel.com/blog/1563-jquery-comments-plug-in-to-access-html-comments-for-dom-templating.htm
