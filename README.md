@@ -11,13 +11,13 @@ This version adds the ability to return text nodes, comment or text nodes whose 
 ## Usage
 
 **Return all comments in the target element:**
-```
-var _comments = $('.target-element').comments();
+```javascript
+let _comments = $('.target-element').comments();
 ```
 
 **Return filtered collection of parent nodes:**
-```
-var _comments = $('.target-element').comments({
+```javascript
+let _comments = $('.target-element').comments({
 		//match comment text against this regex, only include the comment if it matches
 		regex: /item-id:\s*(\d{4,6})(?!-[a-z])/i,
 		//return the parent nodes instead of the comments themselves
@@ -30,7 +30,7 @@ var _comments = $('.target-element').comments({
 		//-find all of the elements between this comment and the next item class
 		//-filter out anything that isn't the target element
 		//-use the remaining element as the node
-		var _hasElement = $(original).nextUntil('.item1-class').filter('.other-class');
+		let _hasElement = $(original).nextUntil('.item1-class').filter('.other-class');
 		if(!!_hasElement.length){
 			node = _hasElement[0];
 		}//if
@@ -45,15 +45,15 @@ var _comments = $('.target-element').comments({
 ```
 
 **Return text nodes instead of comment nodes:**
-```
-var _comments = $('.target-element').comments({
+```javascript
+let _comments = $('.target-element').comments({
 	text: true
 });
 ```
 
 **No deep traversal:**
-```
-var _comments = $('.target-element').comments({
+```javascript
+let _comments = $('.target-element').comments({
 	deep: false
 });
 ```
